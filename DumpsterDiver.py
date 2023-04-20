@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import advancedSearch
 import core
 import os
 import sys
@@ -54,8 +53,9 @@ if __name__ == '__main__':
         help="when this flag is set, then all files will be additionally "
              + "analyzed in search of hardcoded passwords.")    
     basic.add_argument('-o', dest='outfile', default='results.json', 
-        help="output file in JSON format.")   
-
+        help="output file in JSON format.")  
+    basic.add_argument('--skip-entropy',dest='skip_entropy', action='store_true', 
+        help="when this flag is set, then checks will be ignored")  
     configuration.add_argument('--min-key', dest='min_key', type=int, 
         help="specifies the minimum key length to be analyzed (default is 20).")
     configuration.add_argument('--max-key', dest='max_key', action='store', 

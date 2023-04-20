@@ -9,3 +9,4 @@
 # Output files
 results.json
 errors.log
+.pyc
