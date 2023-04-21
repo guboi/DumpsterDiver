@@ -9,4 +9,6 @@
 # Output files
 results.json
 errors.log
-.pyc
+*.pyc
+__pycache__
+__pycache__/*.pyc
