@@ -43,7 +43,8 @@ def mp_handler(queue, result, settings):
     # depending on your hardware the DumpsterDiver will use all available cores for
     # parallel processing
 
-    p = multiprocessing.Pool(multiprocessing.cpu_count())
+    cpu_count = multiprocessing.cpu_count()
+    p = multiprocessing.Pool(cpu_count)
     while queue.qsize():
         p.apply_async(worker, (queue, result, settings))
     queue.join()
